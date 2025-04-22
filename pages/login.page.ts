@@ -13,7 +13,7 @@ export class LoginPage extends PageBase {
     super();
     this.page = page;
     this.username = page.locator("#username");
-    this.PAGE_READY_ELEMENT = this.username
+    this.PAGE_READY_ELEMENT = this.username;
   }
 
   async enterEmail(value: string) {
