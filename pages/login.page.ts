@@ -5,13 +5,11 @@ export class LoginPage extends PageBase {
   readonly PATH = "/";
   readonly TIMEOUT_SECONDS = 10;
   readonly PAGE_READY_ELEMENT: Locator;
-  readonly page: Page;
 
   readonly username: Locator;
 
   constructor(page: Page) {
-    super();
-    this.page = page;
+    super(page);
     this.username = page.locator("#username");
     this.PAGE_READY_ELEMENT = this.username;
   }

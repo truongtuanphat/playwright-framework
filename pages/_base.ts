@@ -4,7 +4,11 @@ export abstract class PageBase {
   abstract readonly PATH: string;
   abstract readonly TIMEOUT_SECONDS: number;
   abstract readonly PAGE_READY_ELEMENT: Locator;
-  abstract readonly page: Page;
+  page: Page;
+
+  constructor(page: Page) {
+    this.page = page;
+  }
 
   async isLoaded() {
     await expect(this.PAGE_READY_ELEMENT).toBeVisible({
