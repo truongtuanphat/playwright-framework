@@ -15,4 +15,7 @@ export default tseslint.config(
       "playwright/expect-expect": "off",
     },
   },
+  {
+    ignores: ["node_modules/**", "test-results/**", "playwright-report/**", "eslint.config.mjs"],
+  },
 );

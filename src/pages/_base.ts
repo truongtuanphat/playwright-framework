@@ -1,4 +1,4 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 
 export abstract class PageBase {
   abstract readonly PATH: string;
@@ -11,7 +11,7 @@ export abstract class PageBase {
   }
 
   async isLoaded() {
-    await expect(this.PAGE_READY_ELEMENT).toBeVisible({
+    await this.PAGE_READY_ELEMENT.waitFor({
       timeout: this.TIMEOUT_SECONDS * 1000,
     });
   }
