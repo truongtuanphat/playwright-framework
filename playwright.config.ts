@@ -15,7 +15,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "https://stage.papagoai.com",
+    baseURL: "https://ultimateqa.com/automation",
     trace: "retain-on-failure",
     actionTimeout: 5_000,
   },

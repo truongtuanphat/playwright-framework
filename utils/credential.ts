@@ -1,5 +1,5 @@
 import fs from "fs";
-import { AccountCredentials } from "../../src/models/account-credentials";
+import { AccountCredentials } from "../src/models/account-credentials";
 
 export function loadCredential(account: string): {
   email: string;

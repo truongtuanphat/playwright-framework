@@ -1,23 +1,12 @@
 import { test } from "@playwright/test";
-import { LoginPage } from "../src/pages/login.page";
-import { BotsPage } from "../src/pages/bots.page";
-import { loadCredential } from "../utils/functions/credential";
-import { ProjectPage } from "../src/pages/project.page";
-import { assertSwitcherState } from "../utils/functions/switcher";
+import { AutomationPage } from "../src/pages/automation.page";
+import { ComplicatedPage } from "../src/pages/complicated.page";
 
-test("example test", async ({ context, page }) => {
-  const loginPage = new LoginPage(page);
+test("example test", async ({ page }) => {
+  const loginPage = new AutomationPage(page);
   await loginPage.goto();
-  await loginPage.login(loadCredential("test"));
+  await loginPage.clickBigPageUrl();
 
-  const botsPage = new BotsPage(page);
-  await botsPage.isLoaded();
-  const pagePromise = context.waitForEvent("page");
-  await botsPage.clickCard("Belle");
-
-  const projectPage = new ProjectPage(await pagePromise);
-  console.log(await projectPage.page.title());
-  await projectPage.isLoaded();
-  console.log(projectPage.getPath());
-  await assertSwitcherState(projectPage.welcomeMessageSwitcher, "off");
+  const complicatedPage = new ComplicatedPage(page);
+  await complicatedPage.isLoaded();
 });
